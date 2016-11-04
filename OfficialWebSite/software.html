@@ -6,13 +6,19 @@
 
     <link href="css/public.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="plug/PicCarousel/css/style.css">
+
     <style type="text/css">
         header .inner .nav-line {
             margin-left: 136px;
         }
+        #banner{
+            padding-top:132px;
+            height: 660px;
+        }
     </style>
 
-    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script src="plug/PicCarousel/js/jquery.js"></script>
 
 
 </head>
@@ -48,7 +54,19 @@
     </div>
 </header>
 
-<div id="banner"></div>
+<div id="banner">
+    <div class="poster-main A_Demo">
+        <div class="poster-btn poster-prev-btn"></div>
+        <ul class="poster-list">
+            <li class="poster-item"><a href="#"><img src="plug/PicCarousel/img/2.jpg" width="100%" ></a></li>
+            <li class="poster-item"><a href="#"><img src="plug/PicCarousel/img/3.jpg" width="100%" ></a></li>
+            <li class="poster-item"><a href="#"><img src="plug/PicCarousel/img/4.jpg" width="100%" ></a></li>
+            <li class="poster-item"><a href="#"><img src="plug/PicCarousel/img/5.jpg" width="100%" ></a></li>
+            <li class="poster-item"><a href="#"><img src="plug/PicCarousel/img/6.jpg" width="100%" ></a></li>
+        </ul>
+        <div class="poster-btn poster-next-btn"></div>
+    </div>
+</div>
 
 <article>
     <div class="inner">
@@ -84,5 +102,17 @@
 
 
 <script type="text/javascript" src="js/slider2.js"></script>
+<script src="plug/PicCarousel/js/PicCarousel.js"></script>
+<script type="text/javascript">
+    $(".A_Demo").PicCarousel({
+        "width":1300,
+        "height":478,
+        "posterHeight":478,
+        "posterWidth":800,
+        "scale":0.8,
+    });
+
+</script>
+
 </body>
 </html>
