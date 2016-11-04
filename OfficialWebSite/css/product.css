@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+#banner {
+    height: 800px;
+    background: #eeeeee;
+}
+
+article .inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+article h3 {
+    font-size: 18px;
+    color: #2272cb;
+    margin: 20px 0 40px 70px;
+}
+
+article h3 span {
+    font-family: "Times New Roman";
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+article .products{
+    width: 1060px;
+    margin: 0 auto;
+}
+
+article li {
+    display: block;
+    height: 196px;
+    width: 260px;
+    background: #000000;
+    float: left;
+    margin:0 140px 108px 0;
+    position: relative;
+}
+
+article li:nth-child(3), article li:nth-child(6){
+    margin-right: 0;
+}
+
+article .title {
+    height: 38px;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.8;
+    font-size: 12px;
+    font-weight: 300px;
+    color: #545454;
+    text-align: center;
+    line-height: 38px;
+    transition: all 0.5s ease;
+}
+
+article .title:hover {
+    height: 196px;
+    opacity: 0.5;
+    font-weight: 500px;
+    line-height: 196px;
+}
+
+

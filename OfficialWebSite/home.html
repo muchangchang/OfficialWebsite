@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"  name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+<title>home</title>
+
+<link rel="stylesheet" href="plug/nivoslider/themes/default/default.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="plug/nivoslider/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="plug/nivoslider/style.css" type="text/css" media="screen" />
+  
+<link href="css/public.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="plug/nivoslider/jquery.nivo.slider.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="mask"></div>
+
+<header>
+    <div class="inner">
+     	<div class="logo"></div>
+        <div class="zxhc"></div> 
+        <div class="search"></div>
+        <div class="nav-icon">
+        	<ul class="icon-nav">
+            	<li><a href="#">首页</a></li>
+            	<li><a href="#">软件产品</a></li>
+            	<li><a href="#">科教产品</a></li>
+            	<li><a href="#">系统集成</a></li>
+            	<li><a href="#">关于我们</a></li>
+            	<li class="last"><a href="#"></a></li>
+            </ul>
+        </div>
+        <nav>
+        	<ul class="menuContainer">
+            	<li><a href="#">首页</a></li>
+            	<li><a href="#">软件产品</a></li>
+            	<li><a href="#">科教产品</a></li>
+            	<li><a href="#">系统集成</a></li>
+            	<li><a href="#">关于我们</a></li>
+            </ul>
+            <div class="nav-line"></div>
+        </nav>
+    </div>
+    
+  
+</header>
+
+<style>
+   img{width:100%;height:1080px;position:absolute;}
+</style>
+
+
+    <div id="wrapper">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img data-thumb='image/home/banner1.png' alt="" class="sliderImg"/>
+                <img data-thumb='image/home/banner2.png' alt="" class="sliderImg" />
+                <img data-thumb='image/home/banner3.png' alt="" class="sliderImg" />
+            </div>
+        </div>
+    </div>
+
+
+   	<script type="text/javascript">
+		$(function(){
+			//boxRainGrow
+    		$('#slider').nivoSlider({});
+			
+			var imgs = $('#slider img.sliderImg');
+			var size;
+			var fun = function(){
+				var width = window.innerWidth;
+				
+				var pathDir;
+
+				if(width <= 1500 && width > 1200){
+					pathDir = "1500";
+				}else if(width <= 1200 && width > 900){
+					pathDir = "1200";
+				}else if(width <= 900 && width > 500){
+					pathDir = "900";
+				}else if(width <= 500){
+					pathDir = "500";
+				}else{
+					imgs.each(function(index, element) {
+						var path = "image/home/banner" + (index + 1) + ".png";
+                        $(element).attr("src",path);
+                    });
+					
+					return;
+				}
+				
+				if(pathDir == size){
+					return;
+				}
+				size = pathDir;
+				
+				imgs.each(function(index, element) {
+					var imgName;
+					switch(index)
+					{
+						case 0:
+						imgName = "one";
+						break;
+						case 1:
+						imgName = "two";
+						break;
+						case 2:
+						imgName = "three";
+						break;
+						
+					}
+					var path = 'image/home/' + pathDir + '/' + imgName + '.png';
+					$(element).attr('src',path);
+				});
+			}
+			
+			$(window).resize(function(e) {
+				fun();
+            });
+			
+			fun();
+			
+		});
+    </script>
+    
+    <script type="text/javascript" src="js/slider.js"></script>
+    
+</body>
+</html>
